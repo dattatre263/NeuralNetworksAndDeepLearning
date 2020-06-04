@@ -6,7 +6,7 @@ def recursiveClean(dirPath):
 			continue
 		if os.path.isdir(os.path.join(dirPath, dirName)):
 			recursiveClean(os.path.join(dirPath, dirName))
-		os.rename(os.path.join(dirPath, dirName), os.path.join(dirPath, dirName.replace(' ', '')))
+		os.rename(os.path.join(dirPath, dirName), os.path.join(dirPath, dirName.replace(r'[ :]', '')))
 
 if len(sys.argv) < 2:
 	print("Usage: dir_rename.py path/to/directories/to/rename")
