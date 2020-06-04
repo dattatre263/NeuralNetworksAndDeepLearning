@@ -2,11 +2,10 @@ import os, sys
 
 def recursiveClean(dirPath):
 	for dirName in os.listdir(dirPath):
-		if not os.path.isdir(os.path.join(dirPath, dirName)):
-			continue
 		if dirName.startswith("."):
-			continue	
-		recursiveClean(os.path.join(dirPath, dirName))
+			continue
+		if os.path.isdir(os.path.join(dirPath, dirName)):
+			recursiveClean(os.path.join(dirPath, dirName))
 		os.rename(os.path.join(dirPath, dirName), os.path.join(dirPath, dirName.replace(' ', '')))
 
 if len(sys.argv) < 2:
