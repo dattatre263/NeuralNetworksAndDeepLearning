@@ -1,0 +1,4 @@
+{
+    "python.jediPath": "/usr/local/anaconda3/pkgs/jedi-0.17.0-py36_0/lib/python3.6/site-packages",
+    "python.jediMemoryLimit": 512
+}
